@@ -17,7 +17,7 @@ public class MqttLinker {
         PASSWORD = aio.toCharArray();
     }
     public void setUSERNAME(String username){
-        USERNAME = username;        
+        USERNAME = username;
     }
     public void setClientId(String clientId){
         CLIENT_ID = clientId;

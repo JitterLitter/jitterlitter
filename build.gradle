@@ -4,14 +4,14 @@ publish {
 
     def groupProjectID = 'com.mqttjitter.jitterlitter'
     def artifactProjectID = 'jitterlitter'
-    def publishVersionID = '0.1.0'
+    def publishVersionID = '0.2.0'
 
     userOrg = 'jitterlitter'
     repoName = 'MqttJitter'
     groupId = groupProjectID
     artifactId = artifactProjectID
     publishVersion = publishVersionID
-    desc = 'Mqtt 3.0 library to connect with adafruit..'
+    desc = 'Newly updated library for Mqtt 3.0 library to connect with adafruit..'
     website = 'https://github.com/JitterLitter/jitterlitter'
 }
 

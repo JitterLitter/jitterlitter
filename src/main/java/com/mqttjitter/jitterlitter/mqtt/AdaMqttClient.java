@@ -15,10 +15,9 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 import java.io.UnsupportedEncodingException;
 
-
-public class PahoMqttClient {
+public class AdaMqttClient {
     Context context;
-    private static final String TAG = "PahoMqttClient";
+    private static final String TAG = "AdaMqttClient";
     private MqttAndroidClient mqttAndroidClient;
 
     public void setMqttAndroidClient(MqttAndroidClient mqttAndroidClient) {
@@ -36,9 +35,9 @@ public class PahoMqttClient {
                 public void onSuccess(IMqttToken asyncActionToken) {
 
                     mqttAndroidClient.setBufferOpts(getDisconnectedBufferOptions());
-                    Toast.makeText(context, "success", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(context, "success", Toast.LENGTH_SHORT).show();
                     try {
-                       publishMessage(mqttAndroidClient, msg, 1, MqttLinker.getPublishTopic());
+                        publishMessage(mqttAndroidClient, msg, 1, MqttLinker.getPublishTopic());
                     } catch (MqttException e) {
                         e.printStackTrace();
                     } catch (UnsupportedEncodingException e) {
@@ -75,7 +74,7 @@ public class PahoMqttClient {
                 public void onSuccess(IMqttToken asyncActionToken) {
 
                     mqttAndroidClient.setBufferOpts(getDisconnectedBufferOptions());
-                    Toast.makeText(context, "success", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(context, "success", Toast.LENGTH_SHORT).show();
                     Log.d(TAG, "Success");
                     try {
                         subscribe(mqttAndroidClient, MqttLinker.getSubscribeTopic(),1);
@@ -108,7 +107,7 @@ public class PahoMqttClient {
             public void onFailure(IMqttToken iMqttToken, Throwable throwable) {
                 Log.d(TAG, "Failed to disconnected " + throwable.toString());
 
-              //  Toast.makeText(context, "Failed to disconnect : ", Toast.LENGTH_SHORT).show();
+                //  Toast.makeText(context, "Failed to disconnect : ", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -156,13 +155,13 @@ public class PahoMqttClient {
             @Override
             public void onSuccess(IMqttToken iMqttToken) {
                 Log.d(TAG, "Subscribe Successfully " + topic);
-              //  Toast.makeText(context, "successfully Subscribe" + topic, Toast.LENGTH_SHORT).show()
+                //  Toast.makeText(context, "successfully Subscribe" + topic, Toast.LENGTH_SHORT).show()
             }
 
             @Override
             public void onFailure(IMqttToken iMqttToken, Throwable throwable) {
                 Log.e(TAG, "Subscribe Failed " + topic);
-               // Toast.makeText(context, "failed Subscribe" + topic, Toast.LENGTH_SHORT).show();
+                // Toast.makeText(context, "failed Subscribe" + topic, Toast.LENGTH_SHORT).show();
             }
         });
     }
